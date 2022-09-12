@@ -1,0 +1,1943 @@
+$white-color: #fff
+$black-color: #030303
+$red-color: #710707
+$gold-color: #9D8665
+$forum-font: 'Forum', cursive
+$roboto-font: 'Roboto', sans-serif
+    
+body
+    background-color: $black-color
+    margin: 0
+
+h1, h2, h3, h4, h5, h6
+    font-weight: 100
+
+h2
+    font-family: $forum-font
+    font-size: 80px
+    @media screen and (max-width: 1024px)
+        font-size: 50px
+    @media screen and (max-width: 768px)
+        font-size: 40px
+    @media screen and (max-width: 420px)
+        font-size: 28px
+
+html
+    scroll-behavior: smooth
+
+.menu
+    display: none
+    @media screen and (max-width: 1024px)
+        display: block
+        position: absolute
+        top: 110px
+        left: -100%
+        width: 50%
+        height: 100%
+        background: linear-gradient(90deg, rgba(0,0,0,1) 80%, rgba(255,255,255,0) 90%)
+        transition: 0.3s all
+        z-index: 1000
+    @media screen and (max-width: 768px)
+        width: 100%
+        background: $black-color
+    @media screen and (max-width: 420px)
+        top: 80px
+    &__list
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: start
+        text-align: left
+        font-size: 1.2rem
+        font-family: $roboto-font
+        font-size: 20px
+        letter-spacing: 2px
+        font-weight: 300
+        margin-top: 55px
+        margin-left: 15px
+        @media screen and (max-width: 768px)
+            margin-top: 35px
+            margin-bottom: 10px
+        @media screen and (max-width: 420px)
+            margin-top: 45px
+    &__item
+        margin: 0px 0px 24px 0px
+        position: relative
+    &__link
+        text-decoration: none
+        color: #eeeeee
+    &__arrow
+        position: absolute
+        left: 110px
+        top: 5px
+    &__img
+        display: none
+        @media screen and (max-width: 768px)
+            display: flex
+            margin: 0 auto
+            width: 86%
+        @media screen and (max-width: 420px)
+            display: none
+        &_420px
+            display: none
+            @media screen and (max-width: 420px)
+                display: flex
+                margin: 0 auto
+                width: 75%
+    &__underline
+        display: none
+        @media screen and (max-width: 768px)
+            display: block
+            width: 86%
+            margin: 33px auto 30px auto
+            height: 1px
+            background-color: #ffffff75
+        @media screen and (max-width: 420px)
+            margin-top: 17px
+            width: 75%
+            margin-bottom: 24px
+    &__socials
+        display: none
+        @media screen and (max-width: 768px)
+            display: flex
+            align-items: flex-end
+            margin: 0
+            width: 100%
+            align-items: center
+            justify-content: center
+            &-list
+                display: flex
+                flex-direction: row
+                list-style: none
+                padding: 0
+                margin-bottom: 5px
+                margin-top: 0
+                align-items: center
+                justify-content: center
+            &-item
+                margin-left: 11px
+                margin-right: 11px
+                @media screen and (max-width: 420px)
+                    margin: 0 3px
+            &-link
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 48px
+                height: 48px
+                border: 1px solid $white-color
+                border-radius: 50%
+.menu.active
+    left: 0
+.menu.closed
+    left: 0
+
+.slick
+    &-list
+        overflow: hidden
+    &-track
+        display: flex
+        align-items: flex-start
+
+
+.slider
+    position: relative
+    padding: 0
+    min-width: 0
+    width: 100%
+    @media screen and (max-width: 768px)
+        width: 95%
+
+    &__item
+        text-align: right
+
+    &__img
+        @media screen and (max-width: 1024px)
+            width: 700px
+        @media screen and (max-width: 768px)
+            width: 100%
+
+
+.header
+    margin-bottom: 8px
+    &__container
+        width: 1440px
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+        height: 140px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            height: 120px
+        @media screen and (max-width: 768px)
+            height: 102px
+        @media screen and (max-width: 420px)
+            height: 80px
+    &__burger
+        display: none
+        @media screen and (max-width: 1024px)
+            display: block
+            position: absolute
+            width: 30px
+            height: 20px
+            right: 20px
+            top: 55px
+            z-index: 999
+            @media screen and (max-width: 768px)
+                top: 45px
+            @media screen and (max-width: 420px)
+                top: 34px
+                right: 18px
+            > span
+                position: absolute
+                background-color: #fff
+                right: 0
+                width: 30px
+                height: 2px
+                top: 9px
+                transition: 0.3s all
+                box-shadow: 6px 6px 20px 3px #24232377
+            &::before, &::after
+                content: ''
+                background-color: #fff
+                position: absolute
+                width: 30px
+                height: 2px
+                right: 0
+                transition: 0.3s all
+                box-shadow: 6px 6px 20px 3px #24232377
+            &::before
+                top: 0
+            &::after
+                bottom: 0
+    &__burger.active::before
+        transform: rotate(45deg)
+        top: 9px
+    &__burger.active::after
+        transform: rotate(-45deg)
+        bottom: 9px
+    &__burger.active span
+        transform: scale(0)
+    &__logo
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 200px
+        margin-top: 5px
+        &-link
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            text-decoration: none
+    &__img
+        @media screen and (max-width: 420px)
+            width: 30px
+    &__title
+        color: $white-color
+        display: inline-block
+        text-transform: uppercase
+        letter-spacing: 5px
+        font-family: $forum-font
+        margin: 0 auto
+        font-size: 28px
+        margin: 10px 0 0 25px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+            margin-top: 6px
+    &__list
+        list-style: none
+        line-height: 115px
+        display: flex
+        @media screen and (max-width: 1024px)
+            display: none
+    &__item
+        margin-left: 56px
+        font-family: $roboto-font
+        font-weight: 100
+        font-size: 22px
+        letter-spacing: 2px
+    &__link
+        color: $white-color
+        text-decoration: none
+        letter-spacing: 2px
+        transition: 0.3s all
+        &:hover
+            color: $gold-color
+
+.welcome
+    color: $white-color
+    &__container
+        position: relative
+        width: 1440px
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+        height: 810px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            padding-left: 20px
+            padding-right: 20px
+            height: 585px
+        @media screen and (max-width: 768px)
+            width: 100%
+            padding: 0
+            flex-direction: column
+            height: auto
+    &__wrapper
+        display: flex
+        flex-direction: column
+    &__greeting
+        position: absolute
+        margin-top: 150px
+        z-index: 999
+        @media screen and (max-width: 1024px)
+            margin-top: 52px
+        @media screen and (max-width: 768px)
+            position: relative
+            text-align: center
+            margin: 0
+    &__title
+        font-family: $forum-font
+        font-size: 80px
+        line-height: 90px
+        letter-spacing: 5px
+        text-transform: uppercase
+        margin: 0
+        @media screen and (max-width: 1024px)
+            font-size: 50px
+        @media screen and (max-width: 768px)
+            line-height: 60px
+            font-size: 36px
+            letter-spacing: 7px
+        @media screen and (max-width: 420px)
+            font-size: 28px
+            line-height: 40px
+            letter-spacing: 5px
+            margin-top: 10px
+    &__desc
+        font-family: $roboto-font
+        font-weight: 300
+        font-size: 28px
+        letter-spacing: 2px
+        margin-bottom: 75px
+        @media screen and (max-width: 1024px)
+            font-size: 24px
+            margin-bottom: 50px
+        @media screen and (max-width: 768px)
+            font-size: 20px
+            margin-top: 25px
+            margin-bottom: 45px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__link
+        font-family: $roboto-font
+        font-weight: 300
+        text-decoration: none
+        color: $white-color
+        display: block
+        width: 360px
+        height: 75px
+        background-color: $red-color
+        text-align: center
+        line-height: 73px
+        border-radius: 10px
+        font-size: 22px
+        letter-spacing: 2px
+        transition: 0.3s all
+        @media screen and (max-width: 1024px)
+            width: 300px
+            height: 60px
+            font-size: 20px
+            line-height: 60px
+        @media screen and (max-width: 768px)
+            display: none
+        &:hover
+            background-color: $gold-color
+    
+    &__slider-wrapper
+        position: relative
+        width: 70%
+        @media screen and (max-width: 768px)
+            width: 100%
+            display: flex
+            justify-content: center
+
+    &__gradient
+        position: absolute
+        top: 0
+        height: 100%
+        width: 30%
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%)
+        z-index: 20
+        @media screen and (max-width: 768px)
+            display: none
+
+    &__slider-controls
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 600px
+        height: 120px
+        background-color: $black-color
+        z-index: 20
+        display: flex
+        align-items: center
+        justify-content: space-around
+        @media screen and (max-width: 768px)
+            width: 100%
+
+        .slick-arrow
+            z-index: 20
+            font-size: 0
+            width: 50px
+            height: 8px
+            border: none
+            cursor: pointer
+            margin: 0
+
+        .slick-arrow.slick-prev
+            background: url('../assets/svg/left-arrow.svg') 0 0 no-repeat
+            transition: 0.3s all
+            &:hover
+                background: url('../assets/svg/left-arrow_hover.svg') 0 0 no-repeat
+
+        .slick-arrow.slick-next
+            background: url('../assets/svg/right-arrow.svg') 0 0 no-repeat
+            transition: 0.3s all
+            &:hover
+                background: url('../assets/svg/right-arrow_hover.svg') 0 0 no-repeat
+
+        .slick-dots
+            display: flex
+            align-items: center
+            justify-content: center
+            padding-left: 10px
+
+            li
+                list-style: none
+                margin: 0 12px
+
+                button
+                    transition: 0.3s all
+
+                    &:hover
+                        background: $gold-color
+
+            li.slick-active button
+                background: #D2B183
+
+            button
+                all: unset
+                font-size: 0
+                width: 16px
+                height: 16px
+                background-color: $white-color
+                cursor: pointer
+
+    &__slider
+
+        &-count
+            color: $white-color
+            font-family: $roboto-font
+            font-size: 22px
+            font-weight: 300
+            width: 136px
+            margin-top: 5px
+            text-align: right
+            @media screen and (max-width: 500px)
+                font-size: 15px
+                margin-left: -1rem
+
+        &-dots
+            display: flex
+            justify-content: center
+            align-items: center
+            @media screen and (max-width: 500px)
+                margin-top: -0.3rem
+                margin-left: 1rem
+                ul li
+                    margin: 0 5px !important
+                    button
+                        width: 10px !important
+                        height: 10px !important
+
+        &-arrows
+            width: 160px
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+
+.visiting
+    background-color: #fff
+    padding-top: 77px
+    @media screen and (max-width: 1024px)
+        padding-top: 55px
+    @media screen and (max-width: 768px)
+        padding-top: 26px
+        padding-bottom: 40px
+    @media screen and (max-width: 420px)
+        padding-top: 18px
+        padding-bottom: 0
+    &__container
+        width: 1440px
+        margin: 0 auto
+        height: 1190px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+            height: auto
+    &__title
+        line-height: 90px
+        letter-spacing: 5px
+        text-transform: uppercase
+        color: $gold-color
+        margin: 0
+        margin-bottom: 26px
+        @media screen and (max-width: 1024px)
+            margin-bottom: 13px
+        @media screen and (max-width: 768px)
+            margin-bottom: 5px
+        @media screen and (max-width: 420px)
+            margin-bottom: 0
+    &__underline
+        width: 100%
+        height: 3px
+        background-color: $red-color
+        margin-bottom: 75px
+        @media screen and (max-width: 1024px)
+            margin: 0 auto 60px auto
+        @media screen and (max-width: 768px)
+            margin-bottom: 40px
+        @media screen and (max-width: 420px)
+            margin-top: -5px
+
+    &__places
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media screen and (max-width: 1024px)
+            width: 89%
+            margin: 0 auto
+        @media screen and (max-width: 768px)
+            width: 92%
+            justify-content: center
+    &__tour
+        margin-bottom: 78px
+        @media screen and (max-width: 1024px)
+            margin-bottom: 62px
+        @media screen and (max-width: 768px)
+            margin-bottom: 39px
+        @media screen and (max-width: 420px)
+            margin-bottom: 41px
+    &__img
+        @media screen and (max-width: 1024px)
+            width: 330px
+        @media screen and (max-width: 768px)
+            width: 280px
+    &__link
+        text-decoration: none
+        margin: 0
+        padding: 0
+        color: $black-color
+        @media screen and (max-width: 1024px)
+            flex-basis: 50%
+            display: flex
+            justify-content: center
+        @media screen and (max-width: 420px)
+            flex-basis: 100%
+        &:hover
+            > div > h3
+                color: $gold-color
+    &__tour-title
+        font-size: 32px
+        font-family: $forum-font
+        letter-spacing: 5px
+        text-transform: uppercase
+        margin: 0
+        margin: 20px 0 10px 0
+        transition: 0.3s all
+        @media screen and (max-width: 1024px)
+            font-size: 28px
+            letter-spacing: 3px
+        @media screen and (max-width: 768px)
+            font-size: 22px
+        @media screen and (max-width: 420px)
+            font-size: 18px
+            letter-spacing: 5px
+    &__tour-underline
+        width: 300px
+        height: 2px
+        background-color: $red-color
+        @media screen and (max-width: 1024px)
+            width: 150px
+    &__desc
+        font-family: $roboto-font
+        font-size: 22px
+        font-weight: 100
+        margin: 0
+        margin: 10px 0 0 0
+        @media screen and (max-width: 1024px)
+            font-size: 20px
+        @media screen and (max-width: 768px)
+            font-size: 18px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__note
+        font-family: $roboto-font
+        font-size: 18px
+        font-weight: 100
+        margin: 0
+        margin: 10px 0 0 0
+        @media screen and (max-width: 1024px)
+            font-size: 16px
+
+.explore
+    color: $white-color
+    padding-bottom: 76px
+    &__container
+        width: 1440px
+        margin: 0 auto
+        display: flex
+        padding-top: 76px
+        padding-bottom: 76px
+        height: 790px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            padding: 50px 20px 0px 20px
+            flex-direction: column
+            height: auto
+            box-sizing: border-box
+        @media screen and (max-width: 768px)
+            padding-top: 28px
+        @media screen and (max-width: 420px)
+            padding-top: 15px
+    &__text
+        display: flex
+        flex-direction: column
+        width: 50%
+        @media screen and (max-width: 1024px)
+            width: 100%
+    &__title
+        letter-spacing: 5px
+        line-height: 90px
+        text-transform: uppercase
+        font-family: $forum-font
+        margin: 0
+        margin-bottom: 28px
+        @media screen and (max-width: 1024px)
+            margin-bottom: 14px
+        @media screen and (max-width: 768px)
+            margin-bottom: 0
+    &__underline
+        width: 660px
+        height: 3px
+        background-color: $red-color
+        margin-bottom: 74px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            margin: 0 auto
+            margin-bottom: 57px
+        @media screen and (max-width: 768px)
+            margin-bottom: 0
+        @media screen and (max-width: 420px)
+            margin-top: -6px
+    &__desc
+        font-size: 22px
+        font-family: $roboto-font
+        line-height: 38.5px
+        font-weight: 300
+        width: 91%
+        margin: 0
+        margin-bottom: 25px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            font-size: 20px
+            margin: 0 auto
+        @media screen and (max-width: 768px)
+            display: none
+        > span
+            color: $gold-color
+    .third-line
+        @media screen and (max-width: 1024px)
+            display: none
+
+    &__img-wrapper
+        height: 700px
+        width: 720px
+        overflow: hidden
+        position: relative
+        margin-top: 15px
+        
+        @media screen and (max-width: 1024px)
+            width: 100%
+
+    &__images
+        height: 100%
+        width: 100%
+        display: flex
+
+    &__after
+        height: 100%
+        width: 100%
+        background: url(../assets/img/explore-slider/after.jpg) no-repeat
+
+    &__before
+        position: absolute
+        height: 100%
+        width: 50%
+        background: url(../assets/img/explore-slider/before.jpg) no-repeat
+
+    &__slider-wrapper
+        position: absolute
+        top: 0
+        width: 100%
+        z-index: 99
+        @media screen and (max-width: 1024px)
+            left: 0
+            right: 0
+            margin-left: auto
+            margin-right: auto
+            // width: 100px
+
+    &__slider
+        width: 100%
+        outline: none
+        background: none
+        -webkit-appearance: none
+
+        &::-webkit-slider-thumb
+            height: 698px
+            width: 4px
+            background: none
+            -webkit-appearance: none
+            cursor: col-resize
+
+    &__drag-line
+        margin-top: 1.25px
+        width: 4px
+        height: 698px
+        position: absolute
+        left: 50%
+        pointer-events: none
+
+        &::before, &::after
+            position: absolute
+            content: ""
+            width: 100%
+            height: 330px
+            background: $white-color
+        &::before
+            top: 0
+        &::after
+            bottom: 0
+        span
+            height: 30px
+            width: 30px
+            border: 4px solid $white-color
+            position: absolute
+            top: 50%
+            left: 50%
+            border-radius: 50%
+            transform: translate(-50%, -50%)
+            &::before, &::after
+                position: absolute
+                content: ""
+                top: 50%
+                border: 10px solid transparent
+                border-bottom-width: 0px
+                border-right-width: 0px
+                transform: translate(-50%, -50%) rotate(45deg)
+
+.video
+    background-color: #fff
+    padding: 0 0 50px 0
+    @media screen and (max-width: 1024px)
+        // padding-bottom: 58px
+        display: none
+    // @media screen and (max-width: 768px)
+    //     padding-bottom: 78px
+    // @media screen and (max-width: 420px)
+    //     padding-bottom: 35px
+    &__container
+        width: 1440px
+        margin: 0 auto
+        padding-top: 75px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            padding: 55px 20px 0px 20px
+        @media screen and (max-width: 768px)
+            padding-top: 24px
+        @media screen and (max-width: 420px)
+            padding-top: 14px
+    &__text
+        display: flex
+        flex-direction: row
+    &__title
+        color: $gold-color
+        text-transform: uppercase
+        line-height: 90px
+        letter-spacing: 5px
+        font-family: $forum-font
+        margin: 0
+        width: 50%
+        @media screen and (max-width: 1024px)
+            width: 100%
+    &__desc
+        font-family: $roboto-font
+        font-weight: 300
+        line-height: 38.5px
+        font-size: 22px
+        width: 50%
+        margin: 0
+        margin-top: 8px
+        @media screen and (max-width: 1024px)
+            display: none
+    
+    &__main-slider-wrapper
+        width: 100%
+        height: 735px
+        padding-top: 75px
+    &__main-slider
+        height: 100%
+        width: 100%
+        min-width: 0
+        padding: 0
+        position: relative
+        .slick-track
+            height: 100% !important
+        .slick-list
+            height: 100% !important
+        .slick-slide
+            height: 100%
+            position: relative
+    &__main-player
+        width: 100%
+        height: 100%
+        border: none
+    &__slider
+        margin-top: 35px
+        position: relative
+        padding: 0
+        min-width: 0
+        width: 100%
+        &-item
+            text-align: center
+
+    &__play-button
+        all: unset
+        position: absolute
+        background: url('../assets/svg/play-button.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+        left: 42%
+        top: 30%
+        // margin: 0 auto
+        width: 220px
+        height: 220px
+        cursor: pointer
+    &__play-button.active
+        display: none
+
+    &__slider-controls
+        position: relative
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 80px
+        z-index: 20
+        display: flex
+        align-items: center
+        justify-content: center
+        .slick-arrow
+            z-index: 20
+            font-size: 0
+            width: 10px
+            height: 12px
+            border: none
+            cursor: pointer
+            margin: 0
+            margin-top: 8px
+        .slick-dots
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 0 12px
+            li
+                list-style: none
+                margin: 0 10px
+                button
+                    transition: 0.3s all
+                    &:hover
+                        background: $red-color
+            li.slick-active button
+                background: #333333
+            button
+                all: unset
+                font-size: 0
+                width: 12px
+                height: 12px
+                border-radius: 50%
+                background-color: #999999
+                cursor: pointer
+    &__prev-arrow
+        background: url('../assets/svg/video-slider-left-arrow.svg') 0 0 no-repeat
+        transition: 0.3s all
+        &:hover
+            background: url('../assets/svg/video-slider-left-arrow_hover.svg') 0 0 no-repeat
+    &__next-arrow
+        background: url('../assets/svg/video-slider-right-arrow.svg') 0 0 no-repeat
+        transition: 0.3s all
+        &:hover
+            background: url('../assets/svg/video-slider-right-arrow_hover.svg') 0 0 no-repeat
+    &__player
+        border: none
+    &__source
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__player-controls
+        position: absolute
+        z-index: 50
+        bottom: 0
+        display: flex
+        width: 100%
+        height: 85px
+        flex-wrap: wrap
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        background-color: $black-color
+    &__small-play-button
+        all: unset
+        width: 38px
+        height: 38px
+        background: url('../assets/svg/small-play-button.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+        cursor: pointer
+    &__small-play-button.active
+        background: url('../assets/svg/pause.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: cente
+    &__progress
+        display: flex
+        width: 64%
+        height: 8px
+        tranistion: 0.3s all
+        background: #C4C4C4
+        cursor: pointer
+        box-sizing: border-box
+        &_filled
+            width: 0
+            background: $red-color
+    &__volume-btn
+        all: unset
+        width: 38px
+        height: 38px
+        background: url('../assets/svg/volume.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+        cursor: pointer
+    &__volume-btn.muted
+        background: url('../assets/svg/mute.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+    &__volume
+        background: #C4C4C4
+        -webkit-appearance: none
+        overflow: hidden
+        &::-webkit-slider-runnable-track
+            height: 8px
+            color: $red-color
+            -webkit-appearance: none
+        &::-webkit-slider-thumb
+            background: #fff
+            width: 8px
+            height: 8px
+            -webkit-appearance: none
+            cursor: pointer
+            box-shadow: -80px 0 0 80px $red-color
+    &__full-screen
+        all: unset
+        width: 38px
+        height: 38px
+        background: url('../assets/svg/full-screen.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+        cursor: pointer
+    &__full-screen.opened
+        background: url('../assets/svg/fullscreen_exit.svg') 0 0 no-repeat
+        background-size: contain
+        background-position: center
+
+.gallery
+    &__container
+        width: 1440px
+        margin: 0 auto
+        padding: 10px 0 0 0
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+        @media screen and (max-width: 1024px)
+            width: 100%
+        @media screen and (max-width: 768px)
+            padding: 0
+    &__title
+        text-transform: uppercase
+        color: $white-color
+        font-family: $forum-font
+        line-height: 90px
+        letter-spacing: 5px
+        margin-bottom: 76px
+        @media screen and (max-width: 1475px)
+            padding-left: 20px
+        @media screen and (max-width: 1024px)
+            padding-left: 20px
+            margin-bottom: 52px
+        @media screen and (max-width: 768px)
+            margin-top: 28px
+        @media screen and (max-width: 420px)
+            margin-top: 14px
+            margin-bottom: 30px
+    &__picture-container
+        height: 1960px
+        overflow-y: hidden
+        position: relative
+        @media screen and (max-width: 1024px)
+            height: 1265px
+            padding: 0 20px
+        @media screen and (max-width: 768px)
+            height: 1050px
+        @media screen and (max-width: 420px)
+            height: 620px
+    &__inner-picture-container
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        height: 3000px
+        gap: 23px 34px
+        @media screen and (max-width: 1024px)
+            height: 2100px
+        @media screen and (max-width: 768px)
+            height: 3500px
+            gap: 25px 25px
+        @media screen and (max-width: 420px)
+            height: 1800px
+            gap: 10px 10px
+    &__img
+        width: 31.7%
+        @media screen and (max-width: 1024px)
+            width: 31%
+        @media screen and (max-width: 768px)
+            width: 48%
+        @media screen and (max-width: 420px)
+            width: 47%
+        &_margin
+            margin-top: 50px
+    &__img.reveal
+        position: relative
+        transform: translateY(150px)
+        opacity: 0
+        transition: all 1s ease
+    .reveal.active
+        transform: translateY(0px)
+        opacity: 1
+
+    &__gradient
+        width: 100%
+        height: 360px
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)
+        z-index: 9
+        position: absolute
+        bottom: 0
+        left: 0
+        box-sizing: border-box
+
+.tickets
+    background-color: $white-color
+    padding-bottom: 57px
+    @media screen and (max-width: 768px)
+        padding-bottom: 38px
+    &__container
+        width: 1440px
+        margin: 0 auto
+        padding-top: 76px
+        height: 800px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            padding: 54px 20px 0px 20px
+            height: auto
+        @media screen and (max-width: 768px)
+            padding: 27px 20px 0 20px
+        @media screen and (max-width: 420px)
+            padding-top: 16px
+    &__title
+        letter-spacing: 5px
+        line-height: 90px
+        text-transform: uppercase
+        font-family: $forum-font
+        margin: 0
+        margin-bottom: 24px
+        color: $gold-color
+        @media screen and (max-width: 1024px)
+            margin-bottom: 12px
+        @media screen and (max-width: 768px)
+            margin-bottom: 4px
+        @media screen and (max-width: 420px)
+            margin-bottom: 0
+    &__underline
+        width: 100%
+        height: 3px
+        background-color: $red-color
+        margin-bottom: 74px
+        @media screen and (max-width: 1024px)
+            margin: 0 auto 60px auto
+        @media screen and (max-width: 768px)
+            margin-bottom: 40px
+            margin-top: -5px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        @media screen and (max-width: 695px)
+            flex-direction: column
+            align-items: center
+            justify-content: center
+    &__img
+        @media screen and (max-width: 1024px)
+            display: none
+        &_1024
+            display: none
+            @media screen and (max-width: 1024px)
+                display: inline-block
+                height: 100%
+                width: calc(75% - 40px)
+            @media screen and (max-width: 768px)
+                display: none
+        &_768
+            display: none
+            @media screen and (max-width: 768px)
+                display: inline-block
+                width: 444px
+                height: 340px
+            @media screen and (max-width: 420px)
+                display: none
+        &_420
+            display: none
+            @media screen and (max-width: 420px)
+                display: flex
+                width: 100%
+    &__form
+        display: flex
+        justify-content: space-between
+        font-family: $roboto-font
+        font-weight: 300
+        width: 45.8%
+        @media screen and (max-width: 1024px)
+            width: auto
+            padding-right: 28px
+        @media screen and (max-width: 768px)
+            padding-right: 48px
+        @media screen and (max-width: 695px)
+            padding-right: 0
+            width: 100%
+            align-items: center
+            justify-content: center
+    &__type
+        text-align: left
+        display: flex
+        flex-direction: column
+        @media screen and (max-width: 1475px)
+            display: none
+    &__type-title
+        font-size: 28px
+        font-weight: 500
+        margin: 0 0 51px 0
+    &__label-wrapper
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin-bottom: 26px
+    &__label
+        height: 14px
+        width: 14px
+        border: 2px solid $black-color
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+    &__label &__checkmark
+        width: calc(100% - 6px)
+        height: calc(100% - 6px)
+        border-radius: 50%
+        background-color: #222
+        display: none
+    &__label input
+        display: none
+    &__label input:checked + &__checkmark
+        display: inline-block
+    &__label-text
+        margin: 0 0 0 22px
+        font-size: 22px
+    &__amount
+        display: flex
+        flex-direction: column
+        align-items: right
+    &__amount-title
+        font-size: 28px
+        font-weight: 500
+        margin: 0 0 27px 0
+        text-align: right
+        @media screen and (max-width: 1024px)
+            text-align: left
+            margin-bottom: 30px
+        @media screen and (max-width: 768px)
+            margin-bottom: 40px
+        @media screen and (max-width: 420px)
+            text-align: center
+            font-size: 16px
+            margin-top: 40px
+            margin-bottom: 22px
+    &__label-num
+        font-size: 22px
+        margin: 0
+        margin-left: 27px
+        @media screen and (max-width: 1024px)
+            margin: 0
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__num-wrapper
+        border: 3px solid $black-color
+        margin: 12px 0 12px 27px
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-around
+        width: 145px
+        height: 45px
+        font-size: 22px
+        @media screen and (max-width: 1024px)
+            margin: 12px 0 28px 0
+            width: 170px
+        @media screen and (max-width: 768px)
+            margin-bottom: 22px
+    &__btn
+        border: 0
+        background-color: #fff
+        font-size: 32px
+        cursor: pointer
+    &__num
+        all: unset
+        width: 3em
+        text-align: center
+    &__total
+        font-size: 28px
+        font-weight: 500
+        letter-spacing: 1.65px
+        text-align: right
+        margin-bottom: 63px
+        @media screen and (max-width: 1024px)
+            margin-top: 0
+        @media screen and (max-width: 768px)
+            margin-top: 15px
+            margin-bottom: 40px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+            text-align: center
+            margin-top: 20px
+    &__buy-btn
+        background-color: $black-color
+        color: $white-color
+        font-size: 22px
+        letter-spacing: 2px
+        width: 175px
+        height: 50px
+        font-family: $roboto-font
+        font-weight: 100
+        text-decoration: none
+        text-align: center
+        line-height: 50px
+        transition: 0.3s all
+        @media screen and (max-width: 420px)
+            font-size: 16px
+        &:hover
+            color: $black-color
+            background-color: $gold-color
+
+// form
+.popup
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: #000000ad
+    top: 0
+    left: 0
+    opacity: 0
+    visibility: hidden
+    transition: 0.3s all
+    z-index: 1000
+    font-family: $roboto-font
+    @media screen and (max-width: 768px)
+        overflow-y: auto
+        overflow-x: hidden
+    &:target
+        opacity: 1
+        visibility: visible
+    &:target .popup__content
+        transition: 0.3s all
+        transform: translateX(0px)
+        opacity: 1
+    &__area
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+    &__body
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: 0.3s all
+        @media screen and (max-width: 768px)
+            align-items: start
+    &__content
+        width: 1385px
+        height: 795px
+        background-color: $white-color
+        color: $black-color
+        padding: 30px
+        position: relative
+        transition: 0.3s all
+        opacity: 0
+        transform: translateX(-100%)
+        display: flex
+        justify-content: center
+        align-items: center
+        @media screen and (max-width: 768px)
+            width: 590px
+            height: 1450px
+        @media screen and (max-width: 420px)
+            height: 1450px
+            width: 100%
+    &__close
+        position: absolute
+        right: 31px
+        top: 30px
+        @media screen and (max-width: 1024px)
+            top: 16px
+        @media screen and (max-width: 768px)
+            top: 43px
+            right: 58px
+        @media screen and (max-width: 420px)
+            top: 30px
+    &__container
+        width: 970px
+        height: 660px
+        margin-top: -13px
+        display: flex
+        justify-content: space-between
+        @media screen and (max-width: 1024px)
+            margin-top: -74px
+        @media screen and (max-width: 768px)
+            flex-direction: column
+            margin-top: -60px
+            height: auto
+        @media screen and (max-width: 420px)
+            width: 100%
+    &__left
+        width: 41%
+        @media screen and (max-width: 768px)
+            width: 90%
+            padding: 0 30px
+        @media screen and (max-width: 420px)
+            width: 100%
+            padding: 0
+            box-sizing: border-box
+            margin-top: 58px
+    &__title
+        text-transform: uppercase
+        margin: 0
+        font-size: 50px
+        color: $gold-color
+        font-family: $forum-font
+        margin-top: -4px
+        @media screen and (max-width: 420px)
+            font-size: 32px
+            margin-bottom: 12px
+    &__text
+        font-size: 18px
+        font-weight: 300
+        color: $red-color
+        margin: 13px 0 9px 0
+        letter-spacing: 0.3px
+    &__underline
+        width: 100%
+        height: 3px
+        background-color: $red-color
+        margin-bottom: 60px
+        @media screen and (max-width: 768px)
+            margin-bottom: 38px
+    &__form
+        display: flex
+        flex-direction: column
+        font-family: $roboto-font
+        position: relative
+        &-control
+            position: relative
+            input
+                border: 1px solid $black-color
+                padding: 11px
+                margin-bottom: 20px
+                font-size: 18px
+                font-weight: 300
+                padding-left: 45px
+                width: 85.6%
+    &__error-form
+        position: absolute
+        bottom: 0
+        left: 0
+        top: 45px
+        color: red
+        font-weight: 300
+        font-size: 14px
+            
+    &__date-time
+        display: flex
+        justify-content: space-between
+        @media screen and (max-width: 420px)
+            flex-direction: column
+        > input
+            border: 1px solid $black-color
+            padding: 10px
+            margin-bottom: 20px
+            font-size: 18px
+            font-weight: 300
+            padding-left: 45px
+    &__date
+        background: url(../assets/svg/date.svg) no-repeat
+        background-position: 16px center
+        width: 130px
+        @media screen and (max-width: 768px)
+            width: 200px
+        @media screen and (max-width: 420px)
+            width: auto
+    &__time
+        background: url(../assets/svg/time.svg) no-repeat
+        background-position: 16px center
+        width: 130px
+        @media screen and (max-width: 768px)
+            width: 200px
+        @media screen and (max-width: 420px)
+            width: auto
+    &__name
+        background: url(../assets/svg/name.svg) no-repeat
+        background-position: 16px center
+    &__email
+        background: url(../assets/svg/email.svg) no-repeat
+        background-position: 16px center
+    &__tel
+        background: url(../assets/svg/tel.svg) no-repeat
+        background-position: 16px center
+    &__select
+        background: url(../assets/svg/ticket-type.svg) no-repeat
+        background-position: 16px center
+        padding: 10px
+        margin-bottom: 20px
+        font-size: 18px
+        font-weight: 300
+        padding-left: 45px
+    &__entry
+        width: 400px
+        height: 135px
+        border: 1px solid $black-color
+        @media screen and (max-width: 768px)
+            width: 100%
+    &__entry-title
+        font-size: 18px
+        font-family: $forum-font
+        color: $gold-color
+        margin: 8px 0 6px 12px
+    &__entry-underline
+        height: 2px
+        width: 95%
+        margin-left: 10px
+        background-color: $red-color
+    &__type
+        font-size: 18px
+        text-align: left
+        margin: 0
+        margin: 19px 0 0 16px
+        font-weight: 300
+    &__entry-tickets
+        display: flex
+        align-items: left
+        flex-direction: column
+        justify-content: space-between
+    &__num-wrapper
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    &__buttons
+        margin-top: 15px
+        margin-right: 15px
+        border: 1px solid #000
+    &__btn
+        background-color: $black-color
+        border: 0
+        color: $white-color
+        width: 33px
+        height: 25px
+        cursor: pointer
+    &__num
+        all: unset
+        width: 30px
+        text-align: center
+
+    &__right
+        width: 48%
+        border: 1px solid $black-color
+        padding: 25px 31px
+        position: relative
+        @media screen and (max-width: 768px)
+            width: 84%
+            padding: 0 15px
+            margin: 50px auto 0 auto
+        @media screen and (max-width: 420px)
+            width: 100%
+            padding: 0 15px
+            box-sizing: border-box
+    &__overview
+        font-size: 32px
+        margin: 0
+        font-weight: 500
+        width: 90%
+        @media screen and (max-width: 768px)
+            margin-top: 22px
+    &__tour
+        margin: 0
+        margin-top: 4px
+        color: $red-color
+        font-size: 22px
+    &__list
+        font-weight: 300
+        font-size: 18px
+        margin-top: 10px
+        list-style: none
+        padding: 0
+    &__item
+        margin-bottom: 5px
+        padding-left: 30px
+        background-position: left center
+    .popup__item.date
+        background: url(../assets/svg/date.svg) no-repeat
+    .popup__item.time
+        background: url(../assets/svg/time.svg) no-repeat
+    .popup__item.check
+        background: url(../assets/svg/checkmark.png) no-repeat
+    &__img
+        position: absolute
+        top: 23px
+        right: 30px
+        @media screen and (max-width: 768px)
+            right: 12px
+        @media screen and (max-width: 420px)
+            width: 100px
+    &__tickets-count
+        font-size: 22px
+        font-weight: 300px
+        span
+            display: inline-block
+            background-color: $black-color
+            color: $white-color
+            width: 30px
+            height: 20px
+            font-size: 18px
+            text-align: center
+            border-radius: 5px
+            margin-right: 12px
+            font-weight: 100
+    &__tickets-count.basic
+        margin-top: 24px
+        margin-bottom: 0
+    &__tickets-count.senior
+        margin-top: 6px
+        margin-bottom: 10px
+    &__prices
+        position: absolute
+        top: 198px
+        right: 30px
+        font-size: 22px
+        font-weight: 300
+        @media screen and (max-width: 768px)
+            right: 12px
+        > p
+            margin: 0
+            margin-bottom: 7px
+    &__overview-underline
+        height: 2px
+        width: 100%
+        background-color: $red-color
+    &__total
+        display: flex
+        justify-content: space-between
+        font-size: 32px
+        > h4
+            margin-top: 10px
+            margin-bottom: 10px
+            font-weight: 500
+    &__card
+        @media screen and (max-width: 768px)
+            padding-bottom: 90px
+        @media screen and (max-width: 420px)
+            width: 100%
+    &__book
+        position: absolute
+        right: 28px
+        bottom: 22px
+        width: 220px
+        height: 45px
+        background-color: $red-color
+        color: $white-color
+        font-size: 22px
+        font-family: $roboto-font
+        font-weight: 300
+        border: 1px solid $red-color
+        cursor: pointer
+        transition: 0.3s all
+        @media screen and (max-width: 768px)
+            // position: inherit
+            right: 12px
+        &:hover
+            background-color: $white-color
+            color: $red-color
+
+.parallax
+    width: 100%
+    height: 400px
+    background: url(../assets/img/parallax.jpg) center center
+    background-size: cover
+    background-attachment: fixed
+    @media screen and (max-width: 768px)
+        height: 300px
+
+.contacts
+    background-color: $white-color
+    padding-bottom: 135px
+    @media screen and (max-width: 1024px)
+        padding-bottom: 65px
+    @media screen and (max-width: 768px)
+        padding-bottom: 75px
+    @media screen and (max-width: 420px)
+        padding-bottom: 55px
+    &__container
+        width: 1440px
+        margin: 0 auto
+        padding-top: 76px
+        height: 800px
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            padding: 52px 20px 0 20px
+            height: auto
+        @media screen and (max-width: 768px)
+            padding-top: 26px
+        @media screen and (max-width: 420px)
+            padding-top: 15px
+    &__title
+        letter-spacing: 5px
+        line-height: 90px
+        text-transform: uppercase
+        font-family: $forum-font
+        margin: 0
+        margin-bottom: 24px
+        color: $gold-color
+        @media screen and (max-width: 1024px)
+            margin-bottom: 15px
+        @media screen and (max-width: 768px)
+            margin-bottom: 4px
+    &__underline
+        width: 100%
+        height: 3px
+        background-color: $red-color
+        margin-bottom: 74px
+        @media screen and (max-width: 1024px)
+            margin-bottom: 60px
+        @media screen and (max-width: 768px)
+            margin-bottom: 40px
+        @media screen and (max-width: 420px)
+            margin-top: -10px
+    &__info-wrapper
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        font-family: $roboto-font
+        @media screen and (max-width: 768px)
+            flex-direction: column
+    &__name
+        font-weight: 500
+        font-size: 28px
+        margin: 0 0 50px 0
+        @media screen and (max-width: 1024px)
+            font-size: 24px
+            margin-bottom: 34px
+        @media screen and (max-width: 768px)
+            font-size: 20px
+            margin-bottom: 38px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__list
+        list-style: none
+        padding: 0
+        font-weight: 100
+        font-size: 22px
+        @media screen and (max-width: 1024px)
+            font-size: 20px
+        @media screen and (max-width: 768px)
+            font-size: 18px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__item
+        margin-bottom: 27px
+        letter-spacing: 0.2px
+        @media screen and (max-width: 1024px)
+            margin-bottom: 14px
+        @media screen and (max-width: 768px)
+            margin-bottom: 15px
+            letter-spacing: normal
+        > a
+            text-decoration: none
+            color: $black-color
+            &:hover
+                text-decoration: underline
+    &__map
+        width: 960px
+        height: 620px
+        @media screen and (max-width: 1285px)
+            width: 80%
+        @media screen and (max-width: 1024px)
+            width: 70%
+        @media screen and (max-width: 768px)
+            width: 100%
+            margin-top: 20px
+
+.footer
+    position: relative
+    color: $white-color
+    font-family: $roboto-font
+    font-weight: 100
+    padding: 45px 0 35px 0
+    @media screen and (max-width: 1024px)
+        padding: 20px 0
+    @media screen and (max-width: 768px)
+        padding-top: 10px
+    @media screen and (max-width: 420px)
+        padding-top: 0
+    &__container
+        width: 1440px
+        margin: 0 auto
+        box-sizing: border-box
+        @media screen and (max-width: 1475px)
+            width: 100%
+            padding-left: 20px
+            padding-right: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+            padding: 0px 20px
+    &__top
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding-bottom: 50px
+        @media screen and (max-width: 1024px)
+            padding-bottom: 45px
+        @media screen and (max-width: 768px)
+            flex-direction: column
+            padding-bottom: 35px
+    &__page-links
+        display: flex
+        flex-direction: row
+        align-items: flex-start
+        justify-content: space-between
+        width: 700px
+        height: 130px
+        margin-top: 40px
+        @media screen and (max-width: 1024px)
+            width: 55%
+        @media screen and (max-width: 768px)
+            width: 88%
+        @media screen and (max-width: 420px)
+            height: auto
+        &_420px
+            display: none
+            @media screen and (max-width: 420px)
+                display: flex
+                list-style: none
+                width: 100%
+                justify-content: space-between
+                align-items: center
+    &__logo-link
+        text-decoration: none
+        color: $white-color
+    &__logo-wrapper
+        display: flex
+        flex-direction: row
+        align-items: center
+    &__logo
+        margin-top: -10px
+        @media screen and (max-width: 420px)
+            width: 30px
+    &__title
+        font-family: $forum-font
+        text-transform: uppercase
+        font-size: 28px
+        letter-spacing: 5px
+        margin: 3px 0 0 28px
+        @media screen and (max-width: 1024px)
+            margin-left: 25px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+            margin-top: -3px
+            margin-left: 18px
+    &__list
+        list-style: none
+        padding: 0
+        font-size: 22px
+        letter-spacing: 2px
+        margin: 0
+        margin-top: 5px
+        @media screen and (max-width: 768px)
+            font-size: 18px
+            margin-top: 10px
+        @media screen and (max-width: 420px)
+            display: none
+        &_420px
+            @media screen and (max-width: 420px)
+                display: flex
+                list-style: none
+                padding: 0
+                height: 90px
+                width: 100%
+                flex-direction: column
+                flex-wrap: wrap
+                row-gap: 35px
+                margin-top: 40px
+    &__list.first
+        @media screen and (max-width: 1024px)
+            margin-left: -74px
+    &__item
+        margin-bottom: 25px
+        &_420px
+            @media screen and (max-width: 420px)
+                font-size: 16px
+                letter-spacing: 2px
+    &__link
+        text-decoration: none
+        color: $white-color
+        transition: 0.3s all
+        &:hover
+            color: $gold-color
+    &__socials
+        display: flex
+        align-items: flex-end
+        @media screen and (max-width: 768px)
+            margin-left: 38%
+        @media screen and (max-width: 625px)
+            margin: 0
+            width: 100%
+            align-items: center
+            justify-content: center
+        &-list
+            display: flex
+            flex-direction: row
+            list-style: none
+            padding: 0
+            margin-bottom: 5px
+            @media screen and (max-width: 1024px)
+                margin-top: 125px
+            @media screen and (max-width: 768px)
+                margin-top: 40px
+            @media screen and (max-width: 625px)
+                margin-top: 0
+                align-items: center
+                justify-content: center
+        &-item
+            margin-left: 22px
+            @media screen and (max-width: 625px)
+                margin-left: 10px
+        &-link
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 48px
+            height: 48px
+            border: 1px solid $white-color
+            border-radius: 50%
+    &__line
+        position: absolute
+        left: 0
+        width: 100%
+        height: 2px
+        background-color: #666666
+    &__bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-top: 30px
+        font-size: 22px
+        letter-spacing: 2px
+        @media screen and (max-width: 768px)
+            padding-top: 18px
+        @media screen and (max-width: 420px)
+            font-size: 16px
+    &__rs
+        @media screen and (max-width: 420px)
+            display: none
+    &__rs, &__username
+        text-decoration: none
+        color: $white-color
+        transition: 0.3s all
+        &:hover
+            color: $gold-color
+
+// TOURS
+.tours
+    &__frame
+        margin: 0
+        width: 100vw
+        height: 100vh
